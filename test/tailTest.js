@@ -1,13 +1,20 @@
-// Importing the tail function
+// Importing relevant functions
+const { assert } = require('chai');
 const tail = require('../tail');
-
-// Importing assertEqual function
-
 const assertEqual = require('../assertEqual');
 
-
 // Test cases
-const words = ["Yo Yo", "Lighthouse", "Labs"];
+describe('#tail', () => {
+  it ('should return Lighthouse and Labs for ["Yo Yo", "Lighthouse", "Labs"]', () => {
+  assert.deepEqual(tail(["Yo Yo", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+});
 
-console.log(tail(words));
-assertEqual(words.length, 3);
+  it ('should return true for words.length === 3', () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    assert.deepEqual(words.length, 3)
+  });
+});
+
+
+
+
